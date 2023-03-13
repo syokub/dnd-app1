@@ -39,57 +39,56 @@ function Main() {
 		});
 	};
 
-
 	return (
 		<div className="App">
 			<DragDropContext onDragEnd={handleDragEnd}>
-				{/* <Droppable droppableId="all-columns" direction="horizontal" type="column"> */}
-					{_.map(state, (data, key) => {
-						return (
-							<div key={key} className="column rounded">
-								<h3 className="bg-[#F2FAF6] p-2 border-b-2 border-[#C9D2CE] sticky top-0">
-									{data.title} {data.items.length}
-								</h3>
-								<Droppable droppableId={key} className="p-3">
-									{(provided, snapshot) => {
-										return (
-											<div
-                                                ref={provided.innerRef}
-												{...provided.droppableProps}
-												className={`droppable-col ${
-													data.items.length === 0
-														? "item bg-center bg-origin-content bg-clip-content opacity-40"
-														: ``
-												}`}
-											>
-												{data.items.map((el, index) => {
-													return (
-														<Draggable
-															key={el.id}
-															index={index}
-															draggableId={el.id}
-														>
-															{(provided, snapshot) => {
-																return (
+				{_.map(state, (data, key) => {
+					return (
+						<div key={key} className="column rounded">
+							<h3 className="bg-[#F2FAF6] p-2 border-b-2 border-[#C9D2CE] sticky top-0">
+								{data.title} {data.items.length}
+							</h3>
+							<Droppable droppableId={key} className="p-3">
+								{(provided, snapshot) => {
+									return (
+										<div
+											ref={provided.innerRef}
+											{...provided.droppableProps}
+											className={`droppable-col ${
+												data.items.length === 0
+													? "item bg-center bg-origin-content bg-clip-content bg-contain bg-no-repeat opacity-40 bg-add"
+													: ``
+											}`}
+										>
+											{data.items.map((el, index) => {
+												return (
+													<Draggable
+														key={el.id}
+														index={index}
+														draggableId={el.id}
+													>
+														{(provided, snapshot) => {
+															return (
+																<>
 																	<CardComponent
 																		provided={provided}
 																		snapshot={snapshot}
 																		el={el}
 																	/>
-																);
-															}}
-														</Draggable>
-													);
-												})}
-												{provided.placeholder}
-											</div>
-										);
-									}}
-								</Droppable>
-							</div>
-						);
-					})}
-				{/* </Droppable> */}
+																</>
+															);
+														}}
+													</Draggable>
+												);
+											})}
+											{provided.placeholder}
+										</div>
+									);
+								}}
+							</Droppable>
+						</div>
+					);
+				})}
 			</DragDropContext>
 		</div>
 	);

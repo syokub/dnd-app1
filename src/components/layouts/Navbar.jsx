@@ -4,7 +4,7 @@ export const Navbar = ({ children }) => {
 	return (
 		<>
 			<div>
-				<div className="bg-[#2EA97D] h-[44px] w-[100vw]">Navbar</div>
+				<div className="bg-[#2EA97D] h-[44px] w-[100vw]"></div>
 				{children}
 			</div>
 		</>

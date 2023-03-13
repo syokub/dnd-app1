@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"addbg": "url()",
+				"add": "url('/src/assets/icons/addFiles.svg')",
 			},
 		},
 	},

@@ -4,6 +4,7 @@ export const initialState = [
 	{
 		todo: {
 			title: "Новые",
+			id:1,
 			items: [
 				{
 					id: v4(),
@@ -50,6 +51,7 @@ export const initialState = [
 		},
 		current: {
 			title: "Текущие",
+			id:2,
 			items: [
 				{
 					id: v4(),
@@ -97,10 +99,12 @@ export const initialState = [
 		},
 		archive: {
 			title: "Архив",
+			id:3,
 			items: [],
 		},
 		closed: {
 			title: "Закрытые",
+			id:4,
 			items: [
 				{
 					id: v4(),
