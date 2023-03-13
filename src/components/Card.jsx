@@ -5,9 +5,21 @@ import { ReactComponent as Docs } from "../assets/icons/tabler_file-description.
 
 export const CardComponent = ({ snapshot, provided, el }) => {
 	const statusColor =
-		el.status === 1 ? "bg-violet-50" : el.status === 2 ? "bg-sky-50" : el.status === 3 ?"bg-red-50":"";
+		el.status === 1
+			? "bg-violet-50"
+			: el.status === 2
+			? "bg-sky-50"
+			: el.status === 3
+			? "bg-red-50"
+			: "";
 	const textColor =
-		el.status === 1 ? "text-violet-500" : el.status === 2 ? "text-sky-400" :  el.status === 3 ?"text-red-400":"";
+		el.status === 1
+			? "text-violet-500"
+			: el.status === 2
+			? "text-sky-400"
+			: el.status === 3
+			? "text-red-400"
+			: "";
 	const text =
 		el.status === 1
 			? "В приоритете"
@@ -35,7 +47,7 @@ export const CardComponent = ({ snapshot, provided, el }) => {
 								{el.department}
 							</span>
 						</div>
-						<button onClick={() => alert("clicked")}>
+						<button onClick={() => alert("clicked!")}>
 							<More />
 						</button>
 					</div>
