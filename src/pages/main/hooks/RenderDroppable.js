@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Droppable } from "react-beautiful-dnd";
 import RenderDraggable from "./RenderDraggable";
 
