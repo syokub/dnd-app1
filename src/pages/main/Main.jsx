@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import _ from "lodash";
-import { v4 } from "uuid";
 import CardComponent from "../../components/Card";
 import { initialState } from "../../_mock/initialState";
 import "../../App.css";
 
 function Main() {
-	const [text, setText] = useState("");
 	const [state, setState] = useState(initialState[0]);
 
 	const handleDragEnd = ({ destination, source }) => {
@@ -41,25 +39,6 @@ function Main() {
 		});
 	};
 
-	const addItem = () => {
-		setState((prev) => {
-			return {
-				...prev,
-				todo: {
-					title: "Todo",
-					items: [
-						{
-							id: v4(),
-							name: text,
-						},
-						...prev.todo.items,
-					],
-				},
-			};
-		});
-
-		setText("");
-	};
 
 	return (
 		<div className="App">
@@ -78,7 +57,7 @@ function Main() {
                                                 ref={provided.innerRef}
 												{...provided.droppableProps}
 												className={`droppable-col ${
-													data.items.length == 0
+													data.items.length === 0
 														? "item bg-center bg-origin-content bg-clip-content opacity-40"
 														: ``
 												}`}
