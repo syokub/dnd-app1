@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 export const Layouts = ({ children }) => {
 	return (
 		<>
-			<div className=" h-[100vh] w-[100vw]  overflow-y-auto overflow-x-auto ">
+			<div className=" h-[100vh] w-[100vw]  overflow-y-hidden overflow-x-hidden ">
 				<div className="">
 					<Navbar className="sticky">
 						<div className="scrollCustomize scrollbar bg-[#f5f7fd]">
